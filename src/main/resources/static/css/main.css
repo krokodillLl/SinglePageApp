@@ -1,0 +1,11 @@
+body{
+    text-align: center;
+    text-decoration-width: 16pt;
+    text-decoration-style: dashed;
+}
+button{
+    /*border-bottom-color: aquamarine;*/
+    /*border-top-left-radius: 25px;*/
+    /*border-top-color: antiquewhite;*/
+    mso-page-border-bottom-art: apples;
+}
