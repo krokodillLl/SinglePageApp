@@ -1,4 +1,4 @@
-package com.krokofillLl.onePageSite.config;
+package com.krokofillLl.singlePageApp.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
