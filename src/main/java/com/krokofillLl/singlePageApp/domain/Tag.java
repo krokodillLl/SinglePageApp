@@ -10,6 +10,7 @@ public class Tag {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
+    private String section;
     private String name;
     private String url;
 //    @ManyToMany
@@ -34,7 +35,15 @@ public class Tag {
         this.url = url;
     }
 
-//    public Set<Article> getArticle() {
+    public String getSection() {
+        return section;
+    }
+
+    public void setSection(String section) {
+        this.section = section;
+    }
+
+    //    public Set<Article> getArticle() {
 //        return article;
 //    }
 //

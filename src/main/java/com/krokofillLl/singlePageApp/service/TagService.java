@@ -17,13 +17,14 @@ public class TagService {
 
     private final static Logger logger = LoggerFactory.getLogger(TagService.class);
 
-    public void addTags(Map<String, String> map) {
+    public void addTags(Map<String, String> map, String section) {
 
         for(Map.Entry<String, String> entry: map.entrySet()) {
 
             Tag tagFromDB = tagRepo.findTagByName(entry.getKey());
             if(tagFromDB == null) {
                 Tag tag = new Tag();
+                tag.setSection(section);
                 tag.setName(entry.getKey());
                 tag.setUrl(entry.getValue());
                 tagRepo.save(tag);
