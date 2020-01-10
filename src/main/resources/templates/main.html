@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Main</title>
@@ -32,13 +32,55 @@
     </nav>
 
     <div id="main" class="container-fluid">
-        <button @click="showArticle()">Показать статью</button>
-        <div class="article" v-show="isArticle">
-            <div class="row">
-                <div class="col-md-4" style="background-color: cadetblue">Left</div>
-                <div class="col-md-4" style="background-color: blueviolet">Middle</div>
-                <div class="col-md-4" style="background-color: darkgray">Right</div>
+        <button @click="showArticle()">Показать статьи</button>
+        <br>
+        <br>
+        <div class="article col-md-6" v-show="isArticle">
+            <div class="row-center">
+                <div class="col-md-12 text-md-center">Разработка</div>
+                <select class="col-md-12">
+                <option class="col-md-12" th:each="developTag, state: ${developTags}">
+                    <div class="col-md-12" th:utext="${developTag.getName()}"></div>
+                </option>
+                </select>
+                <div class="col-md-12 text-md-center">Администрирование</div>
+                <select class="col-md-12">
+                <option class="col-md-12" th:each="adminTag, state: ${adminTags}">
+                    <div class="col-md-12" th:utext="${adminTag.getName()}"></div>
+                </option>
+                </select>
+                <div class="col-md-12 text-md-center">Дизайн</div>
+                <select class="col-md-12">
+                <option class="col-md-12" th:each="designTag, state: ${designTags}">
+                    <div class="col-md-12" th:utext="${designTag.getName()}"></div>
+                </option>
+                </select>
+                <div class="col-md-12 text-md-center">Менеджмент</div>
+                <select class="col-md-12">
+                <option class="col-md-12" th:each="managementTag, state: ${managementTags}">
+                    <div class="col-md-12" th:utext="${managementTag.getName()}"></div>
+                </option>
+                </select>
+                <div class="col-md-12 text-md-center">Маркетинг</div>
+                <select class="col-md-12">
+                <option class="col-md-12" th:each="marketingTag, state: ${marketingTags}">
+                    <div class="col-md-12" th:utext="${marketingTag.getName()}"></div>
+                </option>
+                </select>
+                <div class="col-md-12 text-md-center">Гиктаймс</div>
+                <select class="col-md-12">
+                <option class="col-md-12" th:each="geektimesTag, state: ${geektimesTags}">
+                    <div class="col-md-12" th:utext="${geektimesTag.getName()}"></div>
+                </option>
+                </select>
+                <div class="col-md-12 text-md-center">Разное</div>
+                <select class="col-md-12">
+                <option class="col-md-12" th:each="miscTag, state: ${miscTags}">
+                    <div class="col-md-12" th:utext="${miscTag.getName()}"></div>
+                </option>
+                </select>
             </div>
+            <br>
             <button @click="closeArticle()">Закрыть</button>
         </div>
     </div>

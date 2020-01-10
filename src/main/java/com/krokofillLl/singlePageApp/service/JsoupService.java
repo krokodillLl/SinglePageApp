@@ -10,9 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @Service
@@ -65,8 +63,8 @@ public class JsoupService {
                     for (Element element : elements.select("a")) {
                         map.put(element.text(), element.attr("href"));
                     }
-                    logger.info("Added " + entry.getKey());
                     tagService.addTags(map, entry.getKey());
+                    logger.info("Added " + entry.getKey());
                 }
             }
         }
